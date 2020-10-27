@@ -1,5 +1,5 @@
 from turtle import *
-from random import randrange
+from random import randrange, choice
 from freegames import square, vector
 
 food = vector(0, 0)
