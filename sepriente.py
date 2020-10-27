@@ -6,6 +6,16 @@ food = vector(0, 0)
 snake = [vector(10, 0)]
 aim = vector(0, -10)
 cb = choice(["black", "green", "blue", "magenta", "cyan"])
+if  cb == 'black':
+    cc = choice(["green", "blue", "magenta", "cyan"])
+elif  cb == 'green':
+    cc = choice(["black", "blue", "magenta", "cyan"])
+elif  cb == 'blue':
+    cc = choice(["black", "green", "magenta", "cyan"])
+elif  cb == 'magenta':
+    cc = choice(["black", "blue", "green", "cyan"])
+else:
+    cc = choice(["black", "blue", "green", "magenta"])
 
 def change(x, y):
     "Change snake direction."
