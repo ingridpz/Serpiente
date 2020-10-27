@@ -1,11 +1,15 @@
+# Llamar funciones necesarias para el código
 from turtle import *
 from random import randrange, choice
 from freegames import square, vector
 
+# Definir la serpiente y comida como vectores de cierta longitud
 food = vector(0, 0)
 snake = [vector(10, 0)]
 aim = vector(0, -10)
+# Función que elije el color del cuerpo de la serpiente
 cb = choice(["black", "green", "blue", "magenta", "cyan"])
+# Función que elije el color de la comida (diferente serpiente usando if's)
 if  cb == 'black':
     cc = choice(["green", "blue", "magenta", "cyan"])
 elif  cb == 'green':
@@ -22,6 +26,8 @@ def change(x, y):
     aim.x = x
     aim.y = y
 
+# Condición que termina el juego en caso de comerse a sí mismo
+# Es decir, que la serpiente retroceda por donde viene
 def inside(head):
     "Return True if head inside boundaries."
     return -200 < head.x < 190 and -200 < head.y < 190
