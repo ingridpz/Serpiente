@@ -50,29 +50,39 @@ def move():
         food.y = randrange(-15, 15) * 10
     else:
         snake.pop(0)
+       #Movimiento aleatorio de la comida
+        #Verificar que la comida no se salga de la ventana
         rn=randrange(7)
-        if rn == 0 and food.x <= 190:
+        if rn == 0 and food.x <= 180:
+            #Movimiento a la derecha
             food.x == food.x +10
             food.y = food.y
-        if rn ==1 and food.x <= 190 and food.y <= 190:
+        if rn ==1 and food.x <= 180 and food.y <= 180:
+            #Movimiento en digonal
             food.x == food.x +10
             food.y = food.y + 10
-        if rn == 2 and food.x >= -190 and food.y <= 190:
+        if rn == 2 and food.x >= -180 and food.y <= 180:
+            #Movimiento en diagonal
             food.x == food.x -10
             food.y = food.y + 10
-        if rn == 3 and food.x >= -190:
+        if rn == 3 and food.x >= -180:
+            #Movimiento a la izquierda
             food.x == food.x - 10
             food.y = food.y
-        if rn == 4 and food.y <= 190:
+        if rn == 4 and food.y <= 180:
+            #Movimiento hacia arriba
             food.x == food.x 
             food.y = food.y + 10
-        if rn == 5 and food.x >= -190 and food.y >= -190:
+        if rn == 5 and food.x >= -180 and food.y >= -180:
+            #Movimiento en diagonal
             food.x == food.x - 10
             food.y = food.y - 10
-        if rn == 6 and food.y >= -190:
+        if rn == 6 and food.y >= -180:
+            #Movimiento hacia abajo
             food.x == food.x
             food.y = food.y -10
-        if rn == 7 and food.x <= 190 and food.y >= -190:
+        if rn == 7 and food.x <= 180 and food.y >= -180:
+            #Movimiento en diagonal
             food.x == food.x +10
             food.y == food.y -10 
 
