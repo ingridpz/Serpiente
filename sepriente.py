@@ -1,3 +1,4 @@
+import random
 from turtle import *
 from random import randrange
 from freegames import square, vector
@@ -5,7 +6,7 @@ from freegames import square, vector
 food = vector(0, 0)
 snake = [vector(10, 0)]
 aim = vector(0, -10)
-cb = choice(["black", "green", "blue", "magenta", "cyan"])
+cb = random.choice(["black", "green", "blue", "magenta", "cyan"])
 
 def change(x, y):
     "Change snake direction."
@@ -20,7 +21,8 @@ def move():
     "Move snake forward one segment."
     head = snake[-1].copy()
     head.move(aim)
-
+    
+    
     if not inside(head) or head in snake:
         square(head.x, head.y, 9, 'red')
         update()
@@ -34,10 +36,36 @@ def move():
         food.y = randrange(-15, 15) * 10
     else:
         snake.pop(0)
+        rn=randrange(7)
+        if rn == 0:
+            food.x == food.x +10
+            food.y = food.y
+        if rn ==1:
+            food.x == food.x +10
+            food.y = food.y + 10
+        if rn == 2:
+            food.x == food.x -10
+            food.y = food.y + 10
+        if rn == 3:
+            food.x == food.x - 10
+            food.y = food.y
+        if rn == 4:
+            food.x == food.x 
+            food.y = food.y + 10
+        if rn == 5:
+            food.x == food.x - 10
+            food.y = food.y - 10
+        if rn == 6:
+            food.x == food.x
+            food.y = food.y -10
+        if rn == 7:
+            food.x == food.x +10
+            food.y == food.y -10
 
     clear()
 
     for body in snake:
+        
         square(body.x, body.y, 9, 'black')
 
     square(food.x, food.y, 9, 'green')
