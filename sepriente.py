@@ -3,7 +3,7 @@ from turtle import *
 from random import randrange
 from freegames import square, vector
 
-food = vector(0, 0)
+food = vector(0, 0) 
 snake = [vector(10, 0)]
 aim = vector(0, -10)
 cb = random.choice(["black", "green", "blue", "magenta", "cyan"])
@@ -37,28 +37,28 @@ def move():
     else:
         snake.pop(0)
         rn=randrange(7)
-        if rn == 0:
+        if rn == 0 and food.x <= 190:
             food.x == food.x +10
             food.y = food.y
-        if rn ==1:
+        if rn ==1 and food.x <= 190 and food.y <= 190:
             food.x == food.x +10
             food.y = food.y + 10
-        if rn == 2:
+        if rn == 2 and food.x >= -190 and food.y <= 190:
             food.x == food.x -10
             food.y = food.y + 10
-        if rn == 3:
+        if rn == 3 and food.x >= -190:
             food.x == food.x - 10
             food.y = food.y
-        if rn == 4:
+        if rn == 4 and food.y <= 190:
             food.x == food.x 
             food.y = food.y + 10
-        if rn == 5:
+        if rn == 5 and food.x >= -190 and food.y >= -190:
             food.x == food.x - 10
             food.y = food.y - 10
-        if rn == 6:
+        if rn == 6 and food.y >= -190:
             food.x == food.x
             food.y = food.y -10
-        if rn == 7:
+        if rn == 7 and food.x <= 190 and food.y >= -190:
             food.x == food.x +10
             food.y == food.y -10
 
