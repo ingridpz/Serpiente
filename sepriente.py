@@ -50,6 +50,31 @@ def move():
         food.y = randrange(-15, 15) * 10
     else:
         snake.pop(0)
+       rn=randrange(7)
+        if rn == 0 and food.x <= 190:
+            food.x == food.x +10
+            food.y = food.y
+        if rn ==1 and food.x <= 190 and food.y <= 190:
+            food.x == food.x +10
+            food.y = food.y + 10
+        if rn == 2 and food.x >= -190 and food.y <= 190:
+            food.x == food.x -10
+            food.y = food.y + 10
+        if rn == 3 and food.x >= -190:
+            food.x == food.x - 10
+            food.y = food.y
+        if rn == 4 and food.y <= 190:
+            food.x == food.x 
+            food.y = food.y + 10
+        if rn == 5 and food.x >= -190 and food.y >= -190:
+            food.x == food.x - 10
+            food.y = food.y - 10
+        if rn == 6 and food.y >= -190:
+            food.x == food.x
+            food.y = food.y -10
+        if rn == 7 and food.x <= 190 and food.y >= -190:
+            food.x == food.x +10
+            food.y == food.y -10 
 
     clear()
 
